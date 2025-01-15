@@ -18,7 +18,7 @@
                   <i class="bi bi-geo-alt flex-shrink-0"></i>
                   <div>
                     <h3>Address</h3>
-                    <p>A108 Adam Street, New York, NY 535022</p>
+                    <p>44,Block-b,Chayabithi Eastern Housing,Middle Basabo,Sabujbagh,Dhaka</p>
                   </div>
                 </div><!-- End Info Item -->
 
@@ -26,7 +26,7 @@
                   <i class="bi bi-telephone flex-shrink-0"></i>
                   <div>
                     <h3>Call Us</h3>
-                    <p>+1 5589 55488 55</p>
+                    <p>+88 01795825188</p>
                   </div>
                 </div><!-- End Info Item -->
 
@@ -34,7 +34,7 @@
                   <i class="bi bi-envelope flex-shrink-0"></i>
                   <div>
                     <h3>Email Us</h3>
-                    <p>info@example.com</p>
+                    <p>nasim.ahamed411@gmail.com</p>
                   </div>
                 </div><!-- End Info Item -->
 
@@ -44,39 +44,33 @@
             </div>
 
             <div class="col-lg-7">
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                <div class="row gy-4">
 
-                  <div class="col-md-6">
-                    <label for="name-field" class="pb-2">Your Name</label>
-                    <input type="text" name="name" id="name-field" class="form-control" required="">
-                  </div>
+                    <form action="{{ route('contact.send') }}" method="POST">
 
-                  <div class="col-md-6">
-                    <label for="email-field" class="pb-2">Your Email</label>
-                    <input type="email" class="form-control" name="email" id="email-field" required="">
-                  </div>
+                    @csrf <!-- Include CSRF token for security -->
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <label for="name-field" class="pb-2">Your Name</label>
+                            <input type="text" name="name" id="name-field" class="form-control" required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email-field" class="pb-2">Your Email</label>
+                            <input type="email" class="form-control" name="email" id="email-field" required="">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="subject-field" class="pb-2">Subject</label>
+                            <input type="text" class="form-control" name="subject" id="subject-field">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="message-field" class="pb-2">Message</label>
+                            <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
 
-                  <div class="col-md-12">
-                    <label for="subject-field" class="pb-2">Subject</label>
-                    <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                  </div>
-
-                  <div class="col-md-12">
-                    <label for="message-field" class="pb-2">Message</label>
-                    <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                  </div>
-
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                    <button type="submit">Send Message</button>
-                  </div>
-
-                </div>
-              </form>
             </div><!-- End Contact Form -->
 
           </div>

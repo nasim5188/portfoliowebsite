@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -29,10 +30,18 @@ class FrontendController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email',
+            'subject' => 'nullable|string|max:255', // Add validation for subject
             'message' => 'required|string',
         ]);
 
-        // Handle contact message (e.g., send email or store in DB)
+        // Save the message to the database
+        Contact::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'subject' => $validated['subject'] ?? null, // Handle optional subject
+            'message' => $validated['message'],
+        ]);
+
         return redirect()->back()->with('success', 'Message sent successfully!');
     }
 }
