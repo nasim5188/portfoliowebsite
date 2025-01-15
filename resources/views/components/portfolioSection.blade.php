@@ -3,11 +3,11 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div><!-- End Section Title -->
+            <h2>Portfolio</h2>
+            <p>This section is under construction. Please check back later for updates.</p>
+        </div><!-- End Section Title --><!-- End Section Title -->
 
-        <div class="container">
+        {{-- <div class="container">
 
           <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
@@ -169,6 +169,6 @@
 
           </div>
 
-        </div>
+        </div> --}}
 
       </section><!-- /Portfolio Section -->

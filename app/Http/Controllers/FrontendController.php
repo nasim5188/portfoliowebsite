@@ -30,7 +30,7 @@ class FrontendController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email',
-            'subject' => 'nullable|string|max:255', // Add validation for subject
+            'subject' => 'nullable|string|max:255',
             'message' => 'required|string',
         ]);
 
@@ -38,10 +38,14 @@ class FrontendController extends Controller
         Contact::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
-            'subject' => $validated['subject'] ?? null, // Handle optional subject
+            'subject' => $validated['subject'] ?? null,
             'message' => $validated['message'],
         ]);
 
-        return redirect()->back()->with('success', 'Message sent successfully!');
+        return response()->json([
+            'success' => true,
+            'message' => 'Message sent successfully!',
+        ]);
     }
+
 }
